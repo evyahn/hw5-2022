@@ -1,0 +1,164 @@
+/* Step 1. Animate logo with keyframes */
+#logo {
+    animation-duration: 5s; 
+    animation-name: movingLogo;
+}
+
+@keyframes movingLogo {
+    from {width: 25px; opacity: 0;}
+    to {width: 475px; opacity: 1;}
+}
+
+/* Step 2. Body element font, image, and color setting */
+body {
+    font-family: 'Poppins', serif;
+    background-image: url("../images/concrete_seamless.png");
+    background-color: #f1f1f1;
+}
+
+/* Step 3. Edit header tag to match example */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Step 4. Edit nav_links to match example */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Step 5. style link so they are the same color before and after visiting */
+a:link, a:visited {
+    color: blue;
+}
+
+/* Step 6. Style direct children of a card class */
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0 20px 0;
+    border-radius: 50px 50px 0 0;
+}
+
+/* Step 7. Match card class to example */
+.card {
+    display: flex;
+    border-radius: 50px 50px 0 0;
+    flex-direction: column;
+    flex-basis: 450px;
+}
+
+/* Step 8. Match pricing class to example */
+.pricing {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-items: center;
+    align-items: center;
+}
+
+/* Step 9. Style images in gallery class */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Step 10. Match gallery class to example */
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+/* Specifications for screens bigger than 1200px */
+@media screen and (min-width: 900px) {
+    /* Step 11. Match header tag and nav_links class to example using flex properties*/
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        flex-flow: row;
+        justify-content: space-evenly;
+    }
+
+    /* Step 12. Match card and pricing class to example */
+    .card {
+        flex-basis: 275px;
+    }
+
+    .pricing {
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    /* Step 13. Modify header so that it is always visible */
+    body > header{
+        position: sticky;
+        top: 0px;
+    }
+}
+
+/* Step 14. No animation if prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+    #logo{
+        animation: none;
+    }
+}
+
+/* Page printed in portait mode */
+@media print{
+    /* Step 15 & 16. Change the font and background image is removed*/
+    body{
+        font-family: Arial, Helvetica;
+        background-image: none;
+    }
+
+    /* Step 17. Resize nav/nav_links */
+    nav{
+        width: 100%;
+    }
+
+    .nav_links{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    /* Step 18. Edit pricing class to align along the bottom */
+    .pricing{
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+    }
+    
+    /* Step 19. Card element should contain border and use flex-basis */
+    .card{
+        border: 2px solid #45ADDD;
+        flex-basis: 325px;
+        flex-direction: column;
+    }
+
+    /* Step 20. Make gallery not visible */
+    .gallery, #gallery{
+        display: none;
+    }
+
+    /* Step 21. Add thumbs up element */
+    .card ul li:nth-child(2)::after{
+        content: "\1F44D";
+    }
+}
