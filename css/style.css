@@ -1,7 +1,6 @@
 /* Step 1. Animate logo with keyframes */
 #logo {
-    animation-duration: 5s; 
-    animation-name: movingLogo;
+    animation: ease-out 5s movingLogo;
 }
 
 @keyframes movingLogo {
@@ -21,10 +20,12 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    align-content: center;
 }
 
 /* Step 4. Edit nav_links to match example */
 .nav_links {
+    list-style: none;
     display: flex;
     flex-direction: column;
 }
@@ -44,18 +45,15 @@ a:link, a:visited {
 
 /* Step 7. Match card class to example */
 .card {
-    display: flex;
     border-radius: 50px 50px 0 0;
-    flex-direction: column;
     flex-basis: 450px;
 }
 
 /* Step 8. Match pricing class to example */
 .pricing {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
     align-items: center;
 }
 
@@ -71,8 +69,7 @@ a:link, a:visited {
 /* Step 10. Match gallery class to example */
 .gallery {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-items: center;
     align-content: center;
@@ -82,13 +79,12 @@ a:link, a:visited {
 @media screen and (min-width: 900px) {
     /* Step 11. Match header tag and nav_links class to example using flex properties*/
     header {
-        display: flex;
+        margin-left: auto;
         flex-direction: row;
         justify-content: space-between;
     }
 
     .nav_links {
-        display: flex;
         flex-direction: row;
         flex-flow: row;
         justify-content: space-evenly;
@@ -102,7 +98,6 @@ a:link, a:visited {
     .pricing {
         align-items: center;
         justify-content: center;
-        
     }
 
     /* Step 13. Modify header so that it is always visible */
