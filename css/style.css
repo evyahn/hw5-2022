@@ -87,7 +87,7 @@ a:link, a:visited {
     .nav_links {
         flex-direction: row;
         flex-flow: row;
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     /* Step 12. Match card and pricing class to example */
